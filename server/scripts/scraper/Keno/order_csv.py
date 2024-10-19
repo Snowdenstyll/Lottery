@@ -12,7 +12,7 @@ import pandas as pd
 
 year = '2024'
 
-csv_filename = f"data/Keno/formatted/{year}.csv"
+csv_filename = f"server/data/Keno/formatted/{year}.csv"
 
 # Read the CSV file into a DataFrame
 df = pd.read_csv(csv_filename)

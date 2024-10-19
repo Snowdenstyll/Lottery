@@ -63,7 +63,7 @@ for t in time_sets:
     dates_arr = getDates(dates)
 
     if winning_numbers:
-        csv_filename = f"data/Keno/scraping/extracted_numbers_{Times[type]['label']}_{year}.csv"
+        csv_filename = f"server/data/Keno/scraping/extracted_numbers_{Times[type]['label']}_{year}.csv"
         header = ['PlayDate', 'AP'] + [f'N{i:02d}' for i in range(1, 21)]
         with open(csv_filename, 'w', newline='') as csvfile:
             csv_writer = csv.writer(csvfile)

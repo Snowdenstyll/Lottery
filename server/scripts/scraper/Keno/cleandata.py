@@ -32,7 +32,7 @@ if year == '2019':
     exit()
 
 # Ensure the directories exist, create them if not
-output_directory = 'data/Keno/scraping/'
+output_directory = 'server/data/Keno/scraping/'
 os.makedirs(output_directory, exist_ok=True)
 
 # File paths for the existing CSV files
@@ -63,7 +63,7 @@ with open(midday_csv_filename, newline='') as csvfile:
 
 length = len(list(evening_list))
 
-csv_filename = f"data/Keno/formatted/{year}.csv"
+csv_filename = f"server/data/Keno/formatted/{year}.csv"
 header = ['PlayDate', 'AP'] + [f'N{i:02d}' for i in range(1, 21)]
 
 with open(csv_filename, 'w', newline='') as csvfile:
