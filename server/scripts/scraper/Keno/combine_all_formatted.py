@@ -9,13 +9,16 @@ from bs4 import BeautifulSoup
 import operator
 import datetime
 
+ROOT_DIR = os.path.abspath(os.curdir)
+
 years = ['2019', '2020', '2021', '2022', '2023', '2024']
 
 date = datetime.datetime.now()
 version = date.strftime("%y_%m_%d_%f")
-csv_filename = f"server/data/Keno/master/{version}.csv"
-output_directory = 'data/Keno/formatted/'
+csv_filename = f"{ROOT_DIR}/data/Keno/master/{version}.csv"
+output_directory = f"{ROOT_DIR}/data/Keno/formatted/"
 os.makedirs(output_directory, exist_ok=True)
+
 header = ['PlayDate', 'AP'] + [f'N{i:02d}' for i in range(1, 21)]
 master_year_list = []
 

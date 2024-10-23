@@ -12,6 +12,7 @@ import operator
 import pandas as pd
 
 year='2024'
+ROOT_DIR = os.path.abspath(os.curdir)
 
 # Function to switch between 'P' and 'A'
 def switch_ap(current_ap):
@@ -31,13 +32,9 @@ def get_last_ap(csv_filename):
 if year == '2019':
     exit()
 
-# Ensure the directories exist, create them if not
-output_directory = 'server/data/Keno/scraping/'
-os.makedirs(output_directory, exist_ok=True)
-
 # File paths for the existing CSV files
-evening_csv_filename = os.path.join(output_directory, f'extracted_numbers_evening_{year}.csv')
-midday_csv_filename = os.path.join(output_directory, f'extracted_numbers_midday_{year}.csv')
+evening_csv_filename = os.path.join(f"{ROOT_DIR}/data/Keno/scraping/extracted_numbers_evening_{year}.csv")
+midday_csv_filename = os.path.join(f"{ROOT_DIR}/data/Keno/scraping/extracted_numbers_midday_{year}.csv")
 
 # Get the last 'AP' values from the existing CSV files
 last_evening_ap = get_last_ap(evening_csv_filename)
@@ -63,7 +60,7 @@ with open(midday_csv_filename, newline='') as csvfile:
 
 length = len(list(evening_list))
 
-csv_filename = f"server/data/Keno/formatted/{year}.csv"
+csv_filename = f"{ROOT_DIR}/data/Keno/formatted/{year}.csv"
 header = ['PlayDate', 'AP'] + [f'N{i:02d}' for i in range(1, 21)]
 
 with open(csv_filename, 'w', newline='') as csvfile:

@@ -48,13 +48,13 @@ if __name__ == "__main__":
     # Install requests if not already installed
     subprocess.run(f"{activate_command}pip install requests", shell=True, check=True)
 
-    script1_path = os.path.join(os.getcwd(), 'server', 'scripts', 'scraper', 'Keno', 'webscraper.py')
+    script1_path = os.path.join(os.getcwd(), 'scripts', 'scraper', 'Keno', 'webscraper.py')
     run_script(script1_path, activate_command)
 
-    script2_path = os.path.join(os.getcwd(), 'server', 'scripts', 'scraper', 'Keno', 'cleandata.py')
+    script2_path = os.path.join(os.getcwd(), 'scripts', 'scraper', 'Keno', 'cleandata.py')
     run_script(script2_path, activate_command)
 
-    script3_path = os.path.join(os.getcwd(), 'server', 'scripts', 'scraper', 'Keno', 'order_csv.py')
+    script3_path = os.path.join(os.getcwd(), 'scripts', 'scraper', 'Keno', 'order_csv.py')
     run_script(script3_path, activate_command)
 
     deactivate_command = deactivate_venv()

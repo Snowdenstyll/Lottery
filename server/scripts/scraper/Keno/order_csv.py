@@ -10,9 +10,10 @@ from bs4 import BeautifulSoup
 import operator
 import pandas as pd
 
-year = '2024'
+ROOT_DIR = os.path.abspath(os.curdir)
 
-csv_filename = f"server/data/Keno/formatted/{year}.csv"
+year = '2024'
+csv_filename = f"{ROOT_DIR}/data/Keno/formatted/{year}.csv"
 
 # Read the CSV file into a DataFrame
 df = pd.read_csv(csv_filename)
