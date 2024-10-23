@@ -25,6 +25,15 @@ def activate_venv():
         print("Virtual environment not found. Please ensure it's set up correctly.")
         sys.exit(1)
 
+def deactivate_venv():
+    if platform.system() == "Windows":
+        deactivate_command = "deactivate"
+    else:
+        deactivate_command = "deactivate"
+
+    print("Deactivating virtual environment...")
+    return deactivate_command
+
 def run_script(script_path, activate_command):
     full_command = f"{activate_command}python {script_path}"
     try:
@@ -47,3 +56,6 @@ if __name__ == "__main__":
 
     script3_path = os.path.join(os.getcwd(), 'server', 'scripts', 'scraper', 'Keno', 'order_csv.py')
     run_script(script3_path, activate_command)
+
+    deactivate_command = deactivate_venv()
+    subprocess.run(deactivate_command, shell=True, check=True)
