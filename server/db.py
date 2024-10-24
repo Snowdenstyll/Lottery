@@ -26,8 +26,7 @@ def close_db(e=None):
 
 def init_db():
     db = get_db()
-
-    with current_app.open_resource('schema.sql') as f:
+    with current_app.open_resource('database/schema/schema.sql') as f:
         db.executescript(f.read().decode('utf8'))
 
 
@@ -41,6 +40,6 @@ def init_db_command():
 def seed_db_command():
     """Populate the database with initial data."""
     db = get_db()
-    with current_app.open_resource('seed.sql') as f:
+    with current_app.open_resource('database/seeder/seed.sql') as f:
         db.executescript(f.read().decode('utf8'))
     click.echo('Populated the database with initial data.')

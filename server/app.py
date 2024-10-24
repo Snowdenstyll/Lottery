@@ -5,11 +5,13 @@ from flask_cors import CORS
 from server.db import init_app
 from server.routes.user import user_bp  # Import the user blueprint
 
+ROOT_DIR = os.path.abspath(os.curdir)
+
 def create_app():
     app = Flask(__name__)
 
     # Database configuration
-    app.config['DATABASE'] = os.path.join(app.instance_path, 'lottery.sqlite')
+    app.config['DATABASE'] = os.path.join('lottery.sqlite')
 
     # Initialize database-related functionality
     init_app(app)
