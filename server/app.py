@@ -1,9 +1,9 @@
 from flask import Flask
 import os
 from flask_cors import CORS
-# Import the database utility
-from server.db import init_app
+from server.db import init_app # Import the database utility
 from server.routes.user import user_bp  # Import the user blueprint
+from server.routes.lottery_numbers import lottery_numbers_bp  # Import the user blueprint
 
 ROOT_DIR = os.path.abspath(os.curdir)
 
@@ -11,7 +11,7 @@ def create_app():
     app = Flask(__name__)
 
     # Database configuration
-    app.config['DATABASE'] = os.path.join('lottery.sqlite')
+    app.config['DATABASE'] = os.path.join(ROOT_DIR, 'lottery.sqlite')
 
     # Initialize database-related functionality
     init_app(app)
@@ -19,13 +19,14 @@ def create_app():
     # Other configurations or blueprints here
     CORS(app)  # Enable CORS
     app.register_blueprint(user_bp)
+    app.register_blueprint(lottery_numbers_bp)
 
     # Routes
     @app.route('/routes')
     def list_routes():
         return '\n'.join([str(rule) for rule in app.url_map.iter_rules()])
 
-    @app.get("/wtf")
+    @app.route('/')
     def testing():
         message = {"message": "Hello World"}
         return message

@@ -1,16 +1,18 @@
 import React, { useEffect } from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Lottery from "./lottery/index"; // Adjust the path as needed
 
-function index() {
+function Index() {
   const [message, setMessage] = React.useState("Loading");
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000")
+    fetch("http://127.0.0.1:5000")
       .then((res) => res.json())
       .then((data) => setMessage(data.message));
-
   }, []);
 
-  return <div> {message}</div>
+  return <div><p>{message}</p></div>;
 }
 
-export default index;
+export default Index;
