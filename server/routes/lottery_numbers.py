@@ -8,7 +8,15 @@ def get_lottery_numbers():
     with current_app.app_context():
         db = get_db()
         lottery_numbers = db.execute('SELECT * FROM lottery_numbers').fetchall()
-        return jsonify({"lottery_numbers": [dict(row) for row in lottery_numbers]})
+        lottery_numbers = [
+        {
+            "id": row[0],
+            "number": row[1],
+            "draw_date": row[2]
+        }
+        for row in lottery_numbers
+    ]
+    return jsonify(lottery_numbers)
 
 """ @lottery_numbers_bp.route('/lottery_numbers', methods=['POST'])
 def add_lottery_number():

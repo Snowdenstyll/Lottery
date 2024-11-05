@@ -2,8 +2,7 @@ from flask import Flask
 import os
 from flask_cors import CORS
 from server.db import init_app # Import the database utility
-from server.routes.user import user_bp  # Import the user blueprint
-from server.routes.lottery_numbers import lottery_numbers_bp  # Import the user blueprint
+from server.routes.lottery_numbers import lottery_numbers_bp
 
 ROOT_DIR = os.path.abspath(os.curdir)
 
@@ -18,7 +17,6 @@ def create_app():
 
     # Other configurations or blueprints here
     CORS(app)  # Enable CORS
-    app.register_blueprint(user_bp)
     app.register_blueprint(lottery_numbers_bp)
 
     # Routes
@@ -35,4 +33,4 @@ def create_app():
 
 if __name__ == "__main__":
     app = create_app()
-    app.run()
+    app.run(port=5001)
