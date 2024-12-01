@@ -1,9 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ["class"],
+  darkMode: "media",
   content: [
     "./src/**/*.{html,js,jsx,ts,tsx}", // Add paths to your template files
-    './src/**/*.{html,js,jsx,ts,tsx}', // Add paths to your template files
   ],
   theme: {
     extend: {
