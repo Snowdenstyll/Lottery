@@ -26,7 +26,6 @@ export default function KenoLottery() {
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data)) {
-          console.log(data[0]);
           setLotteryNumbers(data);
         } else {
           console.error("Fetched data is not an array:", data);
@@ -38,7 +37,7 @@ export default function KenoLottery() {
   }, []);
 
   return (
-    <div>
+    <>
       <TableCaption>Lottery Numbers.</TableCaption>
       <Table>
         <TableHeader>
@@ -60,6 +59,6 @@ export default function KenoLottery() {
           ))}
         </TableBody>
       </Table>
-    </div>
+      </>
   );
 }

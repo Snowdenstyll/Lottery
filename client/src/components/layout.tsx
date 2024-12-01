@@ -9,8 +9,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <nav className="container mx-auto px-4 py-2">
           <ul className="flex space-x-4">
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/numbers">Numbers</Link></li>
-            <li><Link to="/analysis">Analysis</Link></li>
+            <li><Link to="/keno">Keno</Link></li>
           </ul>
         </nav>
       </header>
