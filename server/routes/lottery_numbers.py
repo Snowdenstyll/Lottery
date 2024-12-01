@@ -11,8 +11,10 @@ def get_lottery_numbers():
         lottery_numbers = [
         {
             "id": row[0],
-            "number": row[1],
-            "draw_date": row[2]
+            "game_name": row[1],
+            "draw_date": row[2],
+            "draw_time": row[3],
+            "numbers": row[4]
         }
         for row in lottery_numbers
     ]

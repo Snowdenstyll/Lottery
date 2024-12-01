@@ -21,12 +21,10 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["/client/*"]
+      "@/*": ["./*"],
     }
   },
   "include": [
-    "src",
-    "src/lib",
-    "components"
-  ]
+    "src"
+  ],
 }
