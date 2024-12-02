@@ -1,8 +1,8 @@
 from flask import Flask
 import os
 from flask_cors import CORS
-from server.db import init_app # Import the database utility
-from server.routes.lottery_numbers import lottery_numbers_bp
+from db import init_app # Import the database utility
+from routes.lottery_numbers import lottery_numbers_bp
 
 ROOT_DIR = os.path.abspath(os.curdir)
 

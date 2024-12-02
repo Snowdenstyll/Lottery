@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify, current_app
-from server.db import get_db
+from db import get_db
 from datetime import datetime
 
 lottery_numbers_bp = Blueprint('lottery_numbers', __name__)
