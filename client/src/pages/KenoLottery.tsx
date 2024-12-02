@@ -14,7 +14,7 @@ export default function KenoLottery() {
   const [lotteryNumbers, setLotteryNumbers] = useState<LotteryNumber[]>([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:5001/lottery")
+    fetch("http://3.138.126.116:5001/lottery")
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data)) {
