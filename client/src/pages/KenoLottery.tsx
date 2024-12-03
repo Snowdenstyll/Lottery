@@ -14,7 +14,7 @@ export default function KenoLottery() {
   const [lotteryNumbers, setLotteryNumbers] = useState<LotteryNumber[]>([]);
 
   useEffect(() => {
-    fetch("https://lottery.brandenvongphakdy/lottery")
+    fetch("https://lottery.brandenvongphakdy.com/lottery")
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data)) {
