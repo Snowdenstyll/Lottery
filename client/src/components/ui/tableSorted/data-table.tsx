@@ -21,14 +21,12 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
         onSortingChange: setSorting,
         getSortedRowModel: getSortedRowModel(),
         state: {
-            sorting,
-		},
-		initialState: {
+			sorting,
 			pagination: {
-			  pageIndex: 0, //custom initial page index
-			  pageSize: 25, //custom default page size
+				pageIndex: 0, //custom initial page index
+				pageSize: 25, //custom default page size
 			},
-		  },
+		},
 	});
 
     return (
