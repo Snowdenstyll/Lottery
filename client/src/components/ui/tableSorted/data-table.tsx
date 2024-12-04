@@ -22,7 +22,13 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
         getSortedRowModel: getSortedRowModel(),
         state: {
             sorting,
-        },
+		},
+		initialState: {
+			pagination: {
+			  pageIndex: 0, //custom initial page index
+			  pageSize: 25, //custom default page size
+			},
+		  },
 	});
 
     return (
