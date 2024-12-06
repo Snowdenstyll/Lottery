@@ -1,7 +1,8 @@
 # Lottery Analysis Web Application
 
 ## Overview
-Full-stack web application for lottery number analysis using React, Flask, and machine learning.
+The Lottery Analysis Web Application is a **full-stack web application** designed for analyzing lottery numbers. It leverages modern web technologies to provide users with insights and predictions based on historical lottery data. The application features a user-friendly interface and robust backend to handle data processing and machine learning tasks.\
+Visit [lottery.brandenvongphakdy.com](https://lottery.brandenvongphakdy.com/)
 
 ## Tech Stack
 - Frontend: React.js
